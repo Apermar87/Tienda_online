@@ -1,0 +1,22 @@
+# Ignorar .env
+.env
+
+# Ignorar dependencias
+/vendor/
+/node_modules/
+
+# Ignorar logs y cachés
+/logs/
+/cache/
+
+# Ignorar archivos temporales del sistema
+*.log
+*.tmp
+*.bak
+
+# Ignorar archivos sensibles de bases de datos
+/sql/
+
+# Ignorar archivos generados por IDEs
+*.idea/
+*.vscode/
