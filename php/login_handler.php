@@ -53,7 +53,7 @@ $_SESSION['ultimo_acceso'] = time();
 if (isset($_SESSION['ultimo_acceso']) && (time() - $_SESSION['ultimo_acceso']) > $duracion_sesion) {
     session_unset(); // Elimina las variables de sesión
     session_destroy(); // Destruye la sesión
-    header("Location: login.php");
+    header("Location: ../index.php");
     exit();
 }
 

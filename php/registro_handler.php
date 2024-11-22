@@ -51,8 +51,8 @@ mysqli_stmt_bind_param($stmt, "sss", $nombre, $email, $contraseña_hash);  // 's
 
 // Ejecutar la consulta
 if (mysqli_stmt_execute($stmt)) {
-    echo "Registro exitoso. Redirigiendo al inicio de sesión...";
-    header("refresh:3;url=login.php"); // Redirigir tras 3 segundos
+    echo "Registro exitoso.";
+    header("refresh:3;url=productos.php"); // Redirigir tras 3 segundos
     exit();
 } else {
     // Registra el error si la ejecución falla
