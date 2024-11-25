@@ -37,8 +37,9 @@ if ($contraseña !== $contraseña_confirmada) {
 // Hashear la contraseña
 $contraseña_hash = password_hash($contraseña, PASSWORD_DEFAULT);
 
-// Usar una consulta preparada para evitar SQL Injection
-$sql = "INSERT INTO usuarios (nombre, email, contraseña) VALUES (?, ?, ?)";
+// Usar una consulta preparada
+$sql = "INSERT INTO usuarios (nombre, email, contraseña, rol) VALUES (?, ?, ?, ?)";
+$rol = 'cliente';
 $stmt = mysqli_prepare($conn, $sql);
 
 // Verificar si la preparación de la consulta fue exitosa
@@ -47,12 +48,12 @@ if (!$stmt) {
     die("Error en la base de datos. Por favor, inténtalo más tarde.");
 }
 
-mysqli_stmt_bind_param($stmt, "sss", $nombre, $email, $contraseña_hash);  // 'sss' indica que los parámetros son cadenas
+mysqli_stmt_bind_param($stmt, "sss", $nombre, $email, $contraseña_hash, $rol);  // 'sss' indica que los parámetros son cadenas
 
 // Ejecutar la consulta
 if (mysqli_stmt_execute($stmt)) {
-    echo "Registro exitoso.";
-    header("refresh:3;url=productos.php"); // Redirigir tras 3 segundos
+    header("refresh:3;url=../index.php"); // Redirigir tras 3 segundos
+    echo "Registro exitoso. Inicie sesión.";
     exit();
 } else {
     // Registra el error si la ejecución falla

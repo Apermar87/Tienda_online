@@ -3,6 +3,7 @@ session_start();
 
 // Incluir el archivo de conexión a la base de datos y cargar variables de entorno
 include 'db_connection.php';
+
 use Dotenv\Dotenv;
 
 // Cargar variables de entorno
@@ -38,7 +39,14 @@ $user = mysqli_fetch_assoc($result);
 if ($user && password_verify($contraseña, $user['contraseña'])) {
     $_SESSION['user_id'] = $user['id_usuario'];
     $_SESSION['user_name'] = $user['nombre'];
-    header("Location: productos.php");
+    $_SESSION['user_rol'] = $user['rol'];
+
+    if ($user['rol'] === 'admin') {
+        header("Location: admin_dashboard.php");
+    } else {
+        header("Location: productos.php");
+    }
+    exit();
 } else {
     // Registro de error de credenciales incorrectas
     error_log("Intento de inicio de sesión fallido para el email: $email", 3, __DIR__ . '/../logs/errors.log');
@@ -60,4 +68,3 @@ if (isset($_SESSION['ultimo_acceso']) && (time() - $_SESSION['ultimo_acceso']) >
 // Cerrar la conexión
 mysqli_stmt_close($stmt);
 mysqli_close($conn);
-?>

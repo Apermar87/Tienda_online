@@ -16,14 +16,14 @@
             <form action="php/login_handler.php" method="POST">
                 <h1>Iniciar Sesión</h1>
                 <div class="input-box">
-                    <input type="email" id="email" name="email" placeholder="Usuario" required>
-                    <i class="bx bxs-user"></i>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <i class="bx bxs-envelope"></i>
                 </div>
                 <div class="input-box">
                     <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
                     <i class="bx bxs-lock-alt"></i>
                 </div>
-                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn">Accede</button>
             </form>
         </div>
 
