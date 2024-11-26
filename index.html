@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -11,56 +11,56 @@
 
 <body>
 
-    <div class="container">
-        <div class="form-box login">
-            <form action="php/login_handler.php" method="POST">
+    <div class="contenedor">
+        <div class="caja login">
+            <form action="php/manejar_login.php" method="POST">
                 <h1>Iniciar Sesión</h1>
-                <div class="input-box">
+                <div class="caja-input">
                     <input type="email" id="email" name="email" placeholder="Email" required>
                     <i class="bx bxs-envelope"></i>
                 </div>
-                <div class="input-box">
+                <div class="caja-input">
                     <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
                     <i class="bx bxs-lock-alt"></i>
                 </div>
-                <button type="submit" class="btn">Accede</button>
+                <button type="submit" class="boton">Accede</button>
             </form>
         </div>
 
-        <div class="form-box register">
-            <form action="php/registro_handler.php" method="POST">
+        <div class="caja register">
+            <form action="php/manejar_registro.php" method="POST">
                 <h1>Registro</h1>
-                <div class="input-box">
+                <div class="caja-input">
                     <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
                     <i class="bx bxs-user"></i>
                 </div>
-                <div class="input-box">
+                <div class="caja-input">
                     <input type="email" id="email" name="email" placeholder="Email" required>
                     <i class="bx bxs-envelope"></i>
                 </div>
-                <div class="input-box">
+                <div class="caja-input">
                     <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
                     <i class="bx bxs-lock-alt"></i>
                 </div>
-                <div class="input-box">
+                <div class="caja-input">
                     <input type="password" id="contraseña_confirmada" name="contraseña_confirmada" placeholder="Repetir Contraseña" required>
                     <i class="bx bxs-lock-alt"></i>
                 </div>
-                <button type="submit" class="btn">Registrarse</button>
+                <button type="submit" class="boton">Registrarse</button>
             </form>
 
         </div>
 
-        <div class="toggle-box">
-            <div class="toggle-panel toggle-left">
+        <div class="cambiar-caja">
+            <div class="cambiar-panel cambiar-izquierda">
                 <h1>¡Bienvenido!</h1>
                 <p>¿No tienes una cuenta?</p>
-                <button class="btn register-btn">Regístrate</button>
+                <button class="boton register-boton">Regístrate</button>
             </div>
-            <div class="toggle-panel toggle-right">
+            <div class="cambiar-panel cambiar-derecha">
                 <h1>¡Bienvenido de nuevo!</h1>
                 <p>¿Ya tienes una cuenta?</p>
-                <button class="btn login-btn">Accede</button>
+                <button class="boton login-boton">Accede</button>
             </div>
         </div>
     </div>
